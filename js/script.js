@@ -21,10 +21,15 @@ Consigli del giorno:
 /*
 - Creo la lista di email consentite
 - Chiedo l'email all'utente
+
+- Ripeti tante volte quante la lunghezza della lista
+
   °? SE il valore dell'email inserita è uguale a uno dei valori della lista
-    - scrivo "puoi entrare"
-  :? ALTRIMENTI 
-    - scrivo "non puoi entrare"
+    - cambio il valore della variabile emailTrovata in 1
+  °? SE il valore della variabile emailTrovata è 0
+    - Stampo "Non puoi entrare"
+  : ALTRIMENTI
+    - Stampo "Puoi entrare"
 */
 
 
@@ -41,24 +46,29 @@ checkMailEl.addEventListener('click', function(){
   let emailTrovata = 0;
 
   for (let i = 0; i < allowList.length; i++) {
+    
 
     if (userMailEl.value == allowList[i]) {
 
-    let emailTrovata = 1;
+      emailTrovata = 1;
 
     }
   }
 
-  if (emailTrovata = 0) {
-    let newElement = document.createElement('div');
-    checkResultEl.append(newElement);
-    newElement.innerText = "Non puoi entrare :(";
-  } else if  (emailTrovata = 1) {
-    let newElement = document.createElement('div');
-    checkResultEl.append(newElement);
-    newElement.innerText = "Puoi entrare :)";
-  }
+  let newElement = document.createElement('div');
+  checkResultEl.append(newElement);
 
+  if (emailTrovata == 0) {
+   
+    newElement.innerText = "Non puoi entrare :(";
+    console.log(userMailEl.value);
+
+  } else {
+   
+    newElement.innerText = "Puoi entrare :)";
+    console.log(userMailEl.value);
+
+  }
 })
 
 
@@ -76,36 +86,45 @@ checkMailEl.addEventListener('click', function(){
 */
 
 
-let userNumber = Math.floor(Math.random() * 6 + 1);
-let computerNumber = Math.floor(Math.random() * 6 + 1);
+let rollDiceEl = document.getElementById("rollDice");
 
-let userNumberEl = document.getElementById("userNumber");
-let computerNumberEl = document.getElementById("computerNumber");
-let resultEl = document.getElementById("result");
-console.log(userNumber);
-console.log(computerNumber);
 
-if (userNumber > computerNumber) {
+rollDiceEl.addEventListener('click', function(){
 
-  console.log("Hai vinto");
+  let userNumber = Math.floor(Math.random() * 6 + 1);
+  let computerNumber = Math.floor(Math.random() * 6 + 1);
 
-  userNumberEl.innerText = "Il tuo numero è " + userNumber;
-  computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
-  resultEl.innerHTML = "<strong>Hai vinto</strong>";
+  let userNumberEl = document.getElementById("userNumber");
+  let computerNumberEl = document.getElementById("computerNumber");
+  let resultEl = document.getElementById("result");
 
-} else if (userNumber < computerNumber) {
 
-  console.log("Hai perso");
+  console.log("user number: " + userNumber);
+  console.log("computer number: " + computerNumber);
 
-  userNumberEl.innerText = "Il tuo numero è " + userNumber;
-  computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
-  resultEl.innerHTML = "<strong>Hai perso</strong>";
+  if (userNumber > computerNumber) {
+  
+    console.log("Hai vinto");
+  
+    userNumberEl.innerText = "Il tuo numero è " + userNumber;
+    computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
+    resultEl.innerHTML = "<strong>Hai vinto</strong>";
+  
+  } else if (userNumber < computerNumber) {
+  
+    console.log("Hai perso");
+  
+    userNumberEl.innerText = "Il tuo numero è " + userNumber;
+    computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
+    resultEl.innerHTML = "<strong>Hai perso</strong>";
+  
+  } else if (userNumber == computerNumber) {
+  
+    console.log("Hai pareggiato")
+  
+    userNumberEl.innerText = "Il tuo numero è " + userNumber;
+    computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
+    resultEl.innerHTML = "<strong>Hai pareggiato</strong>";
+  }
 
-} else if (userNumber == computerNumber) {
-
-  console.log("Hai pareggiato")
-
-  userNumberEl.innerText = "Il tuo numero è " + userNumber;
-  computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
-  resultEl.innerHTML = "<strong>Hai pareggiato</strong>";
-}
+})
