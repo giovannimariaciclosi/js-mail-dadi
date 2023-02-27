@@ -38,12 +38,12 @@ let checkResultEl = document.getElementById("checkResult");
 
 checkMailEl.addEventListener('click', function(){
   console.log(userMailEl.value);
-  console.log(allowList[i]);
 
   for (let i = 0; i < allowList.length; i++) {
 
     let newElement = document.createElement('div');
     checkResultEl.append(newElement);
+    console.log(allowList[i]);
     
     if (userMailEl.value == allowList[i]) {
 
