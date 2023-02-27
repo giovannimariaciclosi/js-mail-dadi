@@ -36,14 +36,16 @@ let checkMailEl = document.getElementById("checkMail");
 let checkResultEl = document.getElementById("checkResult");
 
 checkMailEl.addEventListener('click', function(){
-    console.log(userMailEl.value);
-})
+  console.log(userMailEl.value);
 
-for (let i = 0; i < allowList.length; i++) {
   
-  if (userMailEl.value == allowList[i]) {
-    console.log("puoi entrare");
-  } else {
-    console.log("non puoi entrare");
+  for (let i = 0; i < allowList.length; i++) {
+    
+    if (userMailEl === allowList[i]) {
+      console.log("puoi entrare");
+    } else {
+      console.log("non puoi entrare");
+    }
   }
-}
+
+})
