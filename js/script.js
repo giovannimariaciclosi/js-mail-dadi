@@ -21,6 +21,10 @@ Consigli del giorno:
 /*
 - Creo la lista di email consentite
 - Chiedo l'email all'utente
+  °? SE il valore dell'email inserita è uguale a uno dei valori della lista
+    - scrivo "puoi entrare"
+  :? ALTRIMENTI 
+    - scrivo "non puoi entrare"
 */
 
 
@@ -32,12 +36,12 @@ let checkMailEl = document.getElementById("checkMail");
 let checkResultEl = document.getElementById("checkResult");
 
 checkMailEl.addEventListener('click', function(){
-    console.log(checkMailEl);
+    console.log(userMailEl.value);
 })
 
 for (let i = 0; 1 < allowList.length; i++) {
   
-  if (checkMailEl.value == allowList[i]) {
+  if (userMailEl.value == allowList[i]) {
     console.log("puoi entrare");
   } else {
     console.log("non puoi entrare");
