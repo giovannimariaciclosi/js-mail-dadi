@@ -37,26 +37,28 @@ let checkMailEl = document.getElementById("checkMail");
 let checkResultEl = document.getElementById("checkResult");
 
 checkMailEl.addEventListener('click', function(){
-  console.log(userMailEl.value);
+
+  let emailTrovata = 0;
 
   for (let i = 0; i < allowList.length; i++) {
 
-    let newElement = document.createElement('div');
-    checkResultEl.append(newElement);
-    console.log(allowList[i]);
-    
     if (userMailEl.value == allowList[i]) {
 
-      console.log("puoi entrare");
-      newElement.innerText = "puoi entrare";
-
-    } else {
-
-      console.log("non puoi entrare");
-      newElement.innerText = "non puoi entrare";
+    let emailTrovata = 1;
 
     }
   }
+
+  if (emailTrovata = 0) {
+    let newElement = document.createElement('div');
+    checkResultEl.append(newElement);
+    newElement.innerText = "Non puoi entrare :(";
+  } else if  (emailTrovata = 1) {
+    let newElement = document.createElement('div');
+    checkResultEl.append(newElement);
+    newElement.innerText = "Puoi entrare :)";
+  }
+
 })
 
 
