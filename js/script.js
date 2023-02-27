@@ -39,7 +39,7 @@ checkMailEl.addEventListener('click', function(){
     console.log(userMailEl.value);
 })
 
-for (let i = 0; 1 < allowList.length; i++) {
+for (let i = 0; i < allowList.length; i++) {
   
   if (userMailEl.value == allowList[i]) {
     console.log("puoi entrare");
