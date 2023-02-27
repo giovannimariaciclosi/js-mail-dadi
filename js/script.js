@@ -38,14 +38,21 @@ let checkResultEl = document.getElementById("checkResult");
 checkMailEl.addEventListener('click', function(){
   console.log(userMailEl.value);
 
-  
   for (let i = 0; i < allowList.length; i++) {
+
+    let newElement = document.createElement('div');
+    checkResultEl.append(newElement);
     
-    if (userMailEl === allowList[i]) {
+    if (userMailEl.value == allowList[i]) {
+
       console.log("puoi entrare");
+      newElement.innerText = "puoi entrare";
+
     } else {
+
       console.log("non puoi entrare");
+      newElement.innerText = "non puoi entrare";
+
     }
   }
-
 })
