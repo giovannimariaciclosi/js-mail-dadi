@@ -7,3 +7,13 @@
 body {
   font-family: sans-serif;
 }
+
+#input {
+  padding: 2em 0;
+  text-align: center;
+}
+
+#container {
+  padding: 2em 0;
+  text-align: center;
+}

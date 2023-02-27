@@ -28,6 +28,7 @@ Consigli del giorno:
 */
 
 
+
 let allowList = ["pippo@gmail.com", "pluto@gmail.com", "franco@gmail.com", "martina@gmail.com", "lucrezia@gmail.com", "giovanni@gmail.com"];
 console.log(allowList);
 
@@ -37,6 +38,7 @@ let checkResultEl = document.getElementById("checkResult");
 
 checkMailEl.addEventListener('click', function(){
   console.log(userMailEl.value);
+  console.log(allowList[i]);
 
   for (let i = 0; i < allowList.length; i++) {
 
@@ -56,3 +58,52 @@ checkMailEl.addEventListener('click', function(){
     }
   }
 })
+
+
+
+
+/*
+- Genero un numero casuale per l'utente
+- Genero un numero casuale per il computer
+  °? SE il numero dell'utente è > di quello del computer
+    - scrivo "hai vinto"
+  :? ALTRIMENTI SE il numero dell'utente è < di quello del computer 
+    - scrivo "hai perso"
+  :? ALTRIMENTI SE il numero dell'utente è = a quello del computer
+    - scrivo "hai pareggiato"
+*/
+
+
+let userNumber = Math.floor(Math.random() * 6 + 1);
+let computerNumber = Math.floor(Math.random() * 6 + 1);
+
+let userNumberEl = document.getElementById("userNumber");
+let computerNumberEl = document.getElementById("computerNumber");
+let resultEl = document.getElementById("result");
+console.log(userNumber);
+console.log(computerNumber);
+
+if (userNumber > computerNumber) {
+
+  console.log("Hai vinto");
+
+  userNumberEl.innerText = "Il tuo numero è " + userNumber;
+  computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
+  resultEl.innerHTML = "<strong>Hai vinto</strong>";
+
+} else if (userNumber < computerNumber) {
+
+  console.log("Hai perso");
+
+  userNumberEl.innerText = "Il tuo numero è " + userNumber;
+  computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
+  resultEl.innerHTML = "<strong>Hai perso</strong>";
+
+} else if (userNumber == computerNumber) {
+
+  console.log("Hai pareggiato")
+
+  userNumberEl.innerText = "Il tuo numero è " + userNumber;
+  computerNumberEl.innerText = "Il numero del computer è " + computerNumber;
+  resultEl.innerHTML = "<strong>Hai pareggiato</strong>";
+}
