@@ -17,3 +17,23 @@ Consigli del giorno:
 4. torniamo a scrivere in italiano
 5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
 */
+
+let allowList = ["pippo@gmail.com", "pluto@gmail.com", "franco@gmail.com", "martina@gmail.com", "lucrezia@gmail.com", "giovanni@gmail.com"];
+console.log(allowList);
+
+let userMailEl = document.getElementById("userMail");
+let checkMailEl = document.getElementById("checkMail");
+let checkResultEl = document.getElementById("checkResult");
+
+// for (let i = 0; 1 < allowList.length; i++) {
+  
+//   checkMailEl.addEventListener('click', function(){
+    
+//   })
+
+//   if (checkMailEl.value == allowList[i]) {
+//     console.log("puoi entrare");
+//   } else {
+//     console.log("non puoi entrare");
+//   }
+// }
